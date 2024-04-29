@@ -28,7 +28,7 @@ const dataSourceOptions = {
   }),
 };
 
-function App(): JSX.Element {
+const App = (): JSX.Element => {
   const [collapsed, setCollapsed] = useState(true);
 
   const onContentReady = useCallback((e: DataGridTypes.ContentReadyEvent) => {
@@ -79,6 +79,6 @@ function App(): JSX.Element {
       <Paging defaultPageSize={10} />
     </DataGrid>
   );
-}
+};
 
 export default App;
