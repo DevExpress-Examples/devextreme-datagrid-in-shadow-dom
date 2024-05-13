@@ -4,9 +4,9 @@
 <!-- default badges end -->
 # DataGrid for DevExtreme - Shadow DOM Support
 
-[Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) represents one of three Web Components specifications, complemented by [HTML templates](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) and [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Shadow DOM allows you to attach a DOM subtree to an element and have the internals of this tree hidden from JavaScript and CSS running in the page. Thereby, Shadow DOM is instrumental in building scalable, conflict-free web applications, making it easier to develop complex, component-based web interfaces. 
+[Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) represents one of three Web Components specifications, complemented by [HTML templates](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) and [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Shadow DOM allows you to attach a DOM subtree to an element and have the internals of this tree hidden from JavaScript and CSS running on the page. Shadow DOM is instrumental in building scalable, conflict-free web applications, making developing complex, component-based web interfaces easier. 
 
-This example sets up a Shadow DOM host and puts a DevExtreme DataGrid component into it. You can use similar code with other components.
+This example sets up a Shadow DOM host and adds a DevExtreme DataGrid component to it. You can use similar code with other components.
 
 ![DataGrid in Shadow DOM](/datagrid-shadow-dom.png)
 
