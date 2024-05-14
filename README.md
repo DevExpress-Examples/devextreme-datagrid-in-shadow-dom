@@ -1,24 +1,56 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/787614691/24.1.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1230389)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# DevExtreme Examples Template
+# DataGrid for DevExtreme - Shadow DOM Support
 
-This is the repository template for creating new examples. 
+[Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) represents one of three Web Components specifications, complemented by [HTML templates](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) and [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Shadow DOM allows you to attach a DOM subtree to an element and hide the internals of this tree from JavaScript and CSS running on the page. Shadow DOM is instrumental in building scalable, conflict-free web applications (making developing complex, component-based web interfaces easier). 
 
-Use **_Product_ for DevExtreme - _Task_** template for a title. 
+This example sets up a Shadow DOM host and adds a DevExtreme DataGrid component to it. You can use similar code with other components.
 
-Describe the solved task in this section.
+![DataGrid in Shadow DOM](/datagrid-shadow-dom.png)
 
-Put a screenshot/gif that illustrates the result here.
+To attach a Shadow DOM tree, follow the instructions for each framework:
 
-Then, add implementation details (steps, code snippets, and other technical information in a free form), or add a link to an existing document with implementation details. 
+- [Angular](https://angular.io/guide/view-encapsulation#shadow-dom-encapsulation)    
+    ```
+    @Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.scss'],
+        // ...
+        encapsulation: ViewEncapsulation.ShadowDom,
+    })
+    export class AppComponent {
+        // ...
+    }
+    ```
+
+- Vue    
+    ```
+    const app = createApp(App);
+    const shadowHost = document.getElementById("app") as HTMLElement;
+    const shadowRoot = shadowHost.attachShadow({ mode: "open" }) as any;
+
+    app.mount(shadowRoot);
+    ```
+
+- React    
+    ```
+    const shadowHost = document.getElementById('root') as HTMLElement;
+    const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+    const root = ReactDOM.createRoot(shadowRoot);
+
+    root.render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+    );
+    ```
+
 
 ## Files to Review
 
-- **jQuery**
-    - [index.js](jQuery/src/index.js)
 - **Angular**
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
@@ -26,17 +58,3 @@ Then, add implementation details (steps, code snippets, and other technical info
     - [Home.vue](Vue/src/components/HomeContent.vue)
 - **React**
     - [App.tsx](React/src/App.tsx)
-- **NetCore**    
-    - [Index.cshtml](ASP.NET%20Core/Views/Home/Index.cshtml)
-
-## Documentation
-
-- link
-- link
-- ...
-
-## More Examples
-
-- link
-- link
-- ...
