@@ -33,7 +33,13 @@
               "node_modules/devextreme/dist/css/dx.material.blue.light.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "devextreme-quill",
+              "jszip",
+              "devexpress-diagram",
+              "devexpress-gantt"
+            ]
           },
           "configurations": {
             "production": {
