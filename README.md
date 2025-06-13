@@ -57,7 +57,7 @@ To attach a Shadow DOM tree, follow the instructions for each framework:
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
 - **Vue**
-    - [Home.vue](Vue/src/components/HomeContent.vue)
+    - [Home.vue](Vue/src/App.vue)
 - **React**
     - [App.tsx](React/src/App.tsx)
 <!-- feedback -->
