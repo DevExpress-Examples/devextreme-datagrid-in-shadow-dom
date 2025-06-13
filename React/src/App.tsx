@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.css';
 import ODataStore from 'devextreme/data/odata/store';
 import DataGrid, {
   Column,
-  DataGridTypes,
+  type DataGridTypes,
   Grouping,
   GroupPanel,
   Pager,
@@ -28,12 +28,12 @@ const dataSourceOptions = {
   }),
 };
 
-const App = (): JSX.Element => {
+function App(): JSX.Element {
   const [collapsed, setCollapsed] = useState(true);
 
   const onContentReady = useCallback((e: DataGridTypes.ContentReadyEvent) => {
     if (collapsed) {
-      e.component.expandRow(['EnviroCare']);
+      e.component.expandRow(['EnviroCare']).catch(() => {});
       setCollapsed(false);
     }
   }, [collapsed]);
@@ -79,6 +79,6 @@ const App = (): JSX.Element => {
       <Paging defaultPageSize={10} />
     </DataGrid>
   );
-};
+}
 
 export default App;
