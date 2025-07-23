@@ -3,7 +3,11 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 
-createRoot(document.getElementById('root') as HTMLElement).render(
+const shadowHost = document.getElementById('root') as HTMLElement;
+const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+const root = createRoot(shadowRoot);
+
+root.render(
   <StrictMode>
     <App />
   </StrictMode>,
