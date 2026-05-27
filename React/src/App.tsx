@@ -11,7 +11,7 @@ import DataGrid, {
   Paging,
   SearchPanel,
 } from 'devextreme-react/data-grid';
-import DiscountCell from './DiscountCell';
+import DiscountCell from './DiscountCell.tsx';
 
 const pageSizes = [10, 25, 50, 100];
 
