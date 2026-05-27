@@ -1,10 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import DataSource from 'devextreme/data/data_source';
-import { DxDataGridTypes } from 'devextreme-angular/ui/data-grid';
+import {DxDataGridTypes, DxDataGridModule} from 'devextreme-angular/ui/data-grid';
 import { Service } from './app.service';
+import { DxBulletModule, DxTemplateModule } from 'devextreme-angular';
 
 @Component({
   selector: 'app-root',
+  imports: [DxBulletModule, DxTemplateModule, DxDataGridModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Service],
