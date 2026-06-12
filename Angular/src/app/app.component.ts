@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import DataSource from 'devextreme/data/data_source';
 import {DxDataGridTypes, DxDataGridModule} from 'devextreme-angular/ui/data-grid';
 import { Service } from './app.service';
@@ -10,6 +10,7 @@ import { DxBulletModule, DxTemplateModule } from 'devextreme-angular';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Service],
+  changeDetection: ChangeDetectionStrategy.Eager,
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class AppComponent {
